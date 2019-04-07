@@ -178,14 +178,10 @@ nav {
 /**
  * Site footer
  */
-.site-footer {
-  border-top: 1px solid $grey-color-light;
-  padding: $spacing-unit 0;
-}
-
-.footer-heading {
-  @include relative-font-size(1.125);
-  margin-bottom: $spacing-unit / 2;
+footer {
+  text-align: center;
+  padding:60px 20px;
+  color:#fff;
 }
 
 .contact-list,
