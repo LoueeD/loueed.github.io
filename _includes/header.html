@@ -1,0 +1,32 @@
+<header role="banner">
+  {%- assign default_paths = site.pages | map: "path" -%}
+  {%- assign page_paths = site.header_pages | default: default_paths -%}
+  <div class="title">
+    <a class="animate" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+    <div class="circle"></div>
+    <div class="square"></div>
+  </div>
+  <div class="title-2 animate">
+    Front-End Developer &<br>User Experience Designer
+  </div>
+</header>
+<div class="nav-center">
+  <nav>
+    {% comment %}
+      Dynamically generates a list of links to pages with `layout: page` in the front-matter, sorted alphabetically by URL.
+    {% endcomment %}
+    
+    <a class="{% if page.url == "/" %}active{% endif %}" href="/">Blog</a>
+
+    {% assign pages_list = site.pages | sort:"url" %}
+    {% for node in pages_list %}
+      {% if node.title != null %}
+        {% if node.layout == "page" %}
+          <a class="{% if page.url == node.url %}active{% endif %}" href="{{ node.url }}">
+            {{ node.title }}
+          </a>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </nav>
+</div>
