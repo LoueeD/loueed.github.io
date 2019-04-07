@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
   {%- include head.html -%}
-  <body class="{{site.title}}">
+  <body class="{% if page.url == "/" %}body--home{% endif %}">
     {% include header.html %}
     <div class="site-canvas" aria-label="Content">
       {{ content }}

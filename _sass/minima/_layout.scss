@@ -31,8 +31,10 @@ header {
   @media(min-width:360px) {
     padding:80px 30px 50px;
   }
-  @media(min-width:600px) {
-    padding:120px 40px;
+  &.header--home {
+    @media(min-width:600px) {
+      padding:120px 40px;
+    }
   }
   > .title,
   > .title-2 {
